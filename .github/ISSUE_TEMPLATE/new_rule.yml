@@ -1,0 +1,18 @@
+name: New "what to change" rule
+description: A pattern in the logs that wastes tokens, and how to fix it
+labels: [rule]
+body:
+  - type: textarea
+    id: pattern
+    attributes:
+      label: The pattern
+      description: What shows up in the logs, and roughly how many tokens it costs.
+    validations:
+      required: true
+  - type: textarea
+    id: fix
+    attributes:
+      label: The fix
+      description: What the user should change, as one concrete action.
+    validations:
+      required: true

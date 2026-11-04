@@ -1,0 +1,16 @@
+name: Bug report
+description: Something is counted wrong or crashes
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: The command you ran and what you saw. Paste `tokwrap --json` output if numbers look wrong (check it for anything private first).
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: tokwrap and Claude Code versions
+      placeholder: "tokwrap 0.1.0, Claude Code 2.x"

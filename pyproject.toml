@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tokwrap"
+version = "0.1.0"
+description = "See where your Claude Code tokens and money went, and what to change."
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.9"
+authors = [{ name = "Taufique Khan" }]
+keywords = ["claude-code", "tokens", "llm", "cost", "ai-agents", "context-window", "cli"]
+classifiers = ["Programming Language :: Python :: 3", "Environment :: Console", "Topic :: Software Development"]
+
+[project.urls]
+Homepage = "https://github.com/taufiquebuilds/tokwrap"
+
+[project.scripts]
+tokwrap = "tokwrap.cli:main"
+
+[tool.setuptools]
+packages = ["tokwrap"]

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+<rect width="1200" height="630" fill="#f6f4ef"/>
+<style>text{font-family:"Helvetica Neue",Helvetica,Arial,sans-serif}</style>
+<text x="64" y="84" font-size="22" font-weight="700" fill="#6f6a61" letter-spacing="2">TOKWRAP · LAST 30 DAYS</text>
+<text x="64" y="150" font-size="46" font-weight="700" fill="#1b1b1b">25% of my Claude Code spend re-sent</text>
+<text x="64" y="206" font-size="46" font-weight="700" fill="#1b1b1b">Claude&#x27;s own earlier work</text>
+<text x="64" y="268" font-size="24" fill="#6f6a61">$1,395 at API prices · 3.1B input tokens · 37 sessions</text>
+<text x="64" y="338" font-size="22" fill="#1b1b1b">Claude&#x27;s replies in context</text>
+<rect x="440" y="318" width="640" height="28" fill="#d9480f"/>
+<text x="1092" y="340" font-size="22" font-weight="700" fill="#1b1b1b">25%</text>
+<text x="64" y="390" font-size="22" fill="#1b1b1b">Claude Code notices</text>
+<rect x="440" y="370" width="531" height="28" fill="#e2ddd2"/>
+<text x="983" y="392" font-size="22" font-weight="400" fill="#1b1b1b">21%</text>
+<text x="64" y="442" font-size="22" fill="#1b1b1b">Subagents (their own context)</text>
+<rect x="440" y="422" width="288" height="28" fill="#e2ddd2"/>
+<text x="740" y="444" font-size="22" font-weight="400" fill="#1b1b1b">11%</text>
+<text x="64" y="494" font-size="22" fill="#1b1b1b">Shell output</text>
+<rect x="440" y="474" width="258" height="28" fill="#e2ddd2"/>
+<text x="710" y="496" font-size="22" font-weight="400" fill="#1b1b1b">10%</text>
+<text x="64" y="546" font-size="22" fill="#1b1b1b">Claude&#x27;s output</text>
+<rect x="440" y="526" width="230" height="28" fill="#e2ddd2"/>
+<text x="682" y="548" font-size="22" font-weight="400" fill="#1b1b1b">9%</text>
+<text x="1136" y="600" font-size="20" fill="#6f6a61" text-anchor="end">github.com/taufiquebuilds/tokwrap</text>
+</svg>
