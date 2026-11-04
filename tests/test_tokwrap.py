@@ -100,8 +100,9 @@ class ReportTests(unittest.TestCase):
         self.assertIn("Where it went", out.stdout)
 
     def test_cli_report_on_one_session(self):
+        env = dict(__import__("os").environ, PYTHONIOENCODING="utf-8")
         out = subprocess.run([sys.executable, "-m", "tokwrap", "--session", str(FIX)],
-                             cwd=ROOT, capture_output=True, text=True, encoding="utf-8")
+                             cwd=ROOT, capture_output=True, text=True, encoding="utf-8", env=env)
         self.assertEqual(out.returncode, 0, out.stderr)
         self.assertIn("Where it went", out.stdout)
         self.assertIn("$1.50", out.stdout)
