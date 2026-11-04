@@ -23,6 +23,7 @@ from . import __version__
 from .analyze import find_sessions, parse, session_key, session_rates
 
 BAR = 24
+FULL, EMPTY = "█", "░"
 REPLIES = "Claude's replies in context"
 OUTPUT = "Claude's output"
 USE_COLOR = sys.stdout.isatty() and not os.environ.get("NO_COLOR")
@@ -202,7 +203,7 @@ def print_report(r, title):
         if p < 0.005:
             continue
         filled = round(p * BAR)
-        bar = c("33", "█" * filled) + c("2", "░" * (BAR - filled))
+        bar = c("33", FULL * filled) + c("2", EMPTY * (BAR - filled))
         money = f"{fmt_usd(usd):>10}" if r["has_cost"] else ""
         w(f"  {bar} {p:4.0%} {money}  {name}\n")
     if r["notices"] and r["notices"][0][1] > 0.02:
@@ -231,7 +232,22 @@ def print_report(r, title):
     w("\n")
 
 
+def _safe_output():
+    """Never crash on a console that can't print the bar characters (older Windows code pages)."""
+    global FULL, EMPTY
+    for stream in (sys.stdout, sys.stderr):
+        try:
+            stream.reconfigure(errors="replace")
+        except (AttributeError, ValueError):
+            pass
+    try:
+        "█░·×…".encode(sys.stdout.encoding or "ascii")
+    except (UnicodeEncodeError, LookupError):
+        FULL, EMPTY = "#", "."
+
+
 def main(argv=None):
+    _safe_output()
     ap = argparse.ArgumentParser(prog="tokwrap", description="See where your Claude Code tokens and money went.")
     ap.add_argument("--days", type=int, default=30, help="look back this many days (0 = all time, default 30)")
     ap.add_argument("--project", help="only projects whose folder name contains this text")

@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.1 (2026-11-04)
+
+- Fix a crash on Windows consoles that can't print the bar characters. tokwrap now falls back to ASCII bars.
+
 ## 0.1.0 (2026-11-04)
 
 First release.

@@ -92,9 +92,17 @@ class ReportTests(unittest.TestCase):
         self.assertEqual(data["calls"], 3)
         self.assertAlmostEqual(data["cost"], 1.5, places=6)
 
+    def test_cli_report_on_an_ascii_console(self):
+        env = dict(__import__("os").environ, PYTHONIOENCODING="cp1252")
+        out = subprocess.run([sys.executable, "-m", "tokwrap", "--session", str(FIX)],
+                             cwd=ROOT, capture_output=True, text=True, encoding="cp1252", env=env)
+        self.assertEqual(out.returncode, 0, out.stderr)
+        self.assertIn("Where it went", out.stdout)
+
     def test_cli_report_on_one_session(self):
         out = subprocess.run([sys.executable, "-m", "tokwrap", "--session", str(FIX)],
-                             cwd=ROOT, capture_output=True, text=True, check=True)
+                             cwd=ROOT, capture_output=True, text=True, encoding="utf-8")
+        self.assertEqual(out.returncode, 0, out.stderr)
         self.assertIn("Where it went", out.stdout)
         self.assertIn("$1.50", out.stdout)
 
